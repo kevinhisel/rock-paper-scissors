@@ -70,4 +70,17 @@ function parseText(text)
     return text;
 }
 
-const playerSelection = 'Scissors';
+/*************************************************
+ * Loops through 5 iterations of playRound() and prints each result to the console.
+ * Enables user to make their selection through a window prompt.
+ */
+function game()
+{
+    for (let i = 0; i < 5; i++)
+    {
+        let result = playRound(window.prompt("Rock, Paper, or Scissors?"), getComputerPlay());
+        console.log(result);
+    }
+}
+
+game();
