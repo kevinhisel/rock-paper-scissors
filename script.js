@@ -5,7 +5,6 @@ function getComputerPlay() {
 }
 
 function playRound(playerSelection, computerSelection) {
-    playerSelection = capitalize(playerSelection);
 
     if (playerSelection === computerSelection) {
         return "It's a tie!";
@@ -30,19 +29,21 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-function capitalize(text) {
-    text = text.toLowerCase();
-    let firstLetter = text[0].toUpperCase();
-    text = text.replace(text[0], firstLetter);
-
-    return text;
-}
-
 function game() {
-    for (let i = 0; i < 5; i++) {
-        let result = playRound(window.prompt("Rock, Paper, or Scissors?"), getComputerPlay());
+    const buttons = document.querySelectorAll('button');
+
+    buttons[0].addEventListener('click', () => {
+        let result = playRound('Rock', getComputerPlay());
         console.log(result);
-    }
+    });
+    buttons[1].addEventListener('click', () => {
+        let result = playRound('Paper', getComputerPlay());
+        console.log(result);
+    });
+    buttons[2].addEventListener('click', () => {
+        let result = playRound('Scissors', getComputerPlay());
+        console.log(result);
+    });
 }
 
 game();
