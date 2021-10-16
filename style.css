@@ -1,0 +1,15 @@
+.playerUI {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    flex-grow: 1;
+    padding: 10px;
+    margin: 10px;
+    max-width: 200px;
+}
+
+h1 {
+    text-align: center;
+}
