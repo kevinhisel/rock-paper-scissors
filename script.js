@@ -29,21 +29,28 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+function printResult(result) {
+    const container = document.querySelector('.results');
+    
+    const para = document.createElement('p');
+    para.textContent = result;
+
+    container.appendChild(para);
+}
+
 function game() {
     const buttons = document.querySelectorAll('button');
 
     buttons[0].addEventListener('click', () => {
-        let result = playRound('Rock', getComputerPlay());
-        console.log(result);
+        printResult(playRound('Rock', getComputerPlay()));
     });
     buttons[1].addEventListener('click', () => {
-        let result = playRound('Paper', getComputerPlay());
-        console.log(result);
+        printResult(playRound('Paper', getComputerPlay()));
     });
     buttons[2].addEventListener('click', () => {
-        let result = playRound('Scissors', getComputerPlay());
-        console.log(result);
+        printResult(playRound('Scissors', getComputerPlay()));
     });
+    
 }
 
 game();
